@@ -1,0 +1,7 @@
+// /enums/TipoStatistica.js
+module.exports = Object.freeze({
+  STATO_ORDINI: "STATO_ORDINI",
+  TREND_TEMPORALI: "TREND_TEMPORALI",
+  INGREDIENTI_POPOLARI: "INGREDIENTI_POPOLARI",
+  RICETTA_ORDINE: "RICETTA_ORDINE",
+});

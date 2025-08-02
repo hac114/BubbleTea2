@@ -1,0 +1,44 @@
+# Dipendenze
+node_modules/
+.npm
+.pnpm
+yarn.lock
+package-lock.json
+
+# Ambiente
+.env
+.env.*
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE/Editor
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+coverage/
+.nyc_output/
+
+# Build/Output
+dist/
+build/
+*.tmp
+*.temp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# File di configurazione locale/sensibili
+config/local.js
+config/credentials.js
