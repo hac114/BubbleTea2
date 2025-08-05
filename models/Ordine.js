@@ -140,18 +140,26 @@ ordineSchema.methods.processaRimborso = async function (motivo) {
 ordineSchema.methods.calcolaTotale = async function () {
   await this.populate({
     path: "items",
-    populate: {
-      path: "bevanda",
-      populate: { path: "personalizzazione" },
-    },
+    populate: [
+      { 
+        path: "bevanda",
+        model: "Bevanda"
+      },
+      { 
+        path: "personalizzazione",
+        model: "Personalizzazione",
+        populate: [
+          { path: "teaBases", model: "Ingrediente" },
+          { path: "bubbles", model: "Ingrediente" },
+          { path: "aromi", model: "Ingrediente" }
+        ]
+      }
+    ]
   });
 
   this.totale = this.items.reduce((tot, item) => {
-    const prezzoBase = item.bevanda.prezzoBase || 0;
-    const extraPersonalizzazione = item.bevanda.personalizzazione
-      ? calculatePersonalizationExtra(item.bevanda.personalizzazione)
-      : 0;
-
+    const prezzoBase = item.bevanda?.prezzoBase || 0;
+    const extraPersonalizzazione = item.personalizzazione?.prezzoTotale || 0;
     return tot + (prezzoBase + extraPersonalizzazione) * item.quantità;
   }, 0);
 

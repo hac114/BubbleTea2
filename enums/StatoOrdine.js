@@ -1,10 +1,9 @@
-// backend/enums/StatoOrdine.js
 module.exports = {
-  IN_ATTESA: "In attesa",
-  PAGAMENTO_PENDENTE: "Pagamento in sospeso",
-  IN_PREPARAZIONE: "In preparazione",
-  COMPLETATO: "Completato",
-  RITIRATO: "Ritirato",
-  ANNULLATO: "Annullato",
-  PAGAMENTO_FALLITO: "Pagamento fallito",
+  IN_ATTESA: "IN_ATTESA",
+  PAGAMENTO_PENDENTE: "PAGAMENTO_PENDENTE",
+  IN_PREPARAZIONE: "IN_PREPARAZIONE",
+  COMPLETATO: "COMPLETATO",
+  RITIRATO: "RITIRATO",
+  ANNULLATO: "ANNULLATO",
+  PAGAMENTO_FALLITO: "PAGAMENTO_FALLITO"
 };

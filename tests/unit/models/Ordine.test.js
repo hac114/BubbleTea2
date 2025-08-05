@@ -478,5 +478,5 @@ describe('Ordine Model', () => {
     test('PAGAMENTO_PENDENTE → COMPLETATO (valida)', () => testTransizione('PAGAMENTO_PENDENTE', 'COMPLETATO'));
     test('IN_ATTESA → COMPLETATO (invalida)', () => testTransizione('IN_ATTESA', 'COMPLETATO'));
     test('COMPLETATO → ANNULLATO (invalida)', () => testTransizione('COMPLETATO', 'ANNULLATO'));
-  });
+  });  
 });

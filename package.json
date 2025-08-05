@@ -13,8 +13,11 @@
     "test:Personalizzazione": "jest tests/unit/models/Personalizzazione.test.js",
     "test:orderitem": "jest orderItem.test.js --verbose",
     "test:Ordine": "jest tests/unit/models/Ordine.test.js",
+    "test:OrdineDB": "jest tests/unit/models/Ordine.test.db.js --runInBand --verbose",
     "test:Pagamento": "jest tests/unit/models/Pagamento.test.js",
-    "clear-test": "jest --clearCache"
+    "test:integration": "npm run test:OrdineDB", 
+    "clear-test": "jest --clearCache",
+    "test:all": "npm run test:Ordine && npm run test:OrdineDB && npm run test:Pagamento && npm run test:Personalizzazione"
   },
   "keywords": [
     "bubbletea",
@@ -55,6 +58,10 @@
   "jest": {
     "testEnvironment": "node",
     "detectOpenHandles": true,
-    "verbose": true
+    "verbose": true,
+    "testMatch": [
+      "**/*.test.js",
+      "**/*.test.db.js"
+    ]
   }
 }
